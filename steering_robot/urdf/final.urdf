@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="steering_robot">
+  
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0835007564116653 0.111116214887999 0.154680413278001"
+        rpy="0 0 0" />
+      <mass
+        value="0.851974278937707" />
+      <inertia
+        ixx="0.00149508708397235"
+        ixy="4.35705438711245E-06"
+        ixz="-5.54791034727809E-08"
+        iyy="0.00428150675878893"
+        iyz="2.08046638022881E-08"
+        izz="0.00291574075983561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0835007564116653 0.111116214887999 0.154680413278001"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  
+
+
+     <link
+    name="back_r_wheel">
+    <inertial>
+      <origin
+        xyz="0 0.0166799747464916 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0207117601652322" />
+      <inertia
+        ixx="4.0602516755113E-06"
+        ixy="2.68303836678956E-25"
+        ixz="-1.05879118406788E-22"
+        iyy="7.16701569481282E-06"
+        iyz="1.31395450284817E-22"
+        izz="4.0602516755113E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/back_r_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0.0166799747464916 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/back_r_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  
+  <joint
+    name="back_j1"
+    type="continuous">
+    <origin
+      xyz="0.15873 -0.2244 0.11103"
+      rpy="0 -0.13321 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_r_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="2"
+      upper="3"
+      effort="100"
+      velocity="100" />
+  </joint>
+
+  <link
+    name="back_l_wheel">
+    <inertial>
+      <origin
+        xyz="0 -0.0083200252535084 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0207117601652322" />
+      <inertia
+        ixx="4.0602516755113E-06"
+        ixy="-7.6204920748995E-23"
+        ixz="-5.29395592033938E-22"
+        iyy="7.16701569481283E-06"
+        iyz="-1.38876992391939E-23"
+        izz="4.06025167551131E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/back_l_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.15873 -0.2244 0.11103"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/back_l_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_j2"
+    type="continuous">
+    <origin
+      xyz="0.15873 -0.059395 0.11103"
+      rpy="0 -0.5263 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_l_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="1"
+      upper="2"
+      effort="100"
+      velocity="100" />
+  </joint>
+
+   <link
+    name="front_r_wheel">
+    <inertial>
+      <origin
+
+        xyz="0 0.0166799747464916 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0207117601652322" />
+      <inertia
+
+        ixx="4.0602516755113E-06"
+        ixy="7.87852754587752E-24"
+        ixz="0"
+        iyy="7.16701569481282E-06"
+        iyz="1.38319716915357E-22"
+
+        izz="4.0602516755113E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/front_r_wheel.STL" />
+      </geometry>
+      <material
+
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0.0166799747464916 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/front_r_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+
+    name="front_j1"
+    type="continuous">
+    <origin
+      xyz="0.0087289 -0.2244 0.11103"
+      rpy="0 -0.13321 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_r_wheel" />
+    <axis
+
+      xyz="0 1 0" />
+    <limit
+      lower="1"
+      upper="3"
+      effort="100"
+
+      velocity="100" />
+  </joint>
+  <link
+    name="front_l_wheel">
+    <inertial>
+      <origin
+
+        xyz="0 -0.00832002525350839 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0207117601652322" />
+      <inertia
+        ixx="4.06025167551131E-06"
+
+        ixy="1.08420834052082E-23"
+        ixz="0"
+        iyy="7.16701569481283E-06"
+        iyz="1.42854768282932E-22"
+        izz="4.06025167551131E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/front_l_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 -0.00832002525350839 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/front_l_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_j2"
+    type="continuous">
+    <origin
+      xyz="0.0087289 -0.059395 0.11103"
+      rpy="0 -0.5263 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_l_wheel" />
+    <axis
+      xyz="0 1 0000000000000000000" />
+    <limit
+      lower="1"
+      upper="3"
+      effort="100"
+      velocity="100" />
+  </joint>
+
+
+
+
+  <link
+    name="first_link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.0377774235989086 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248962930890307" />
+      <inertia
+        ixx="1.35322939220135E-05"
+        ixy="6.73502996199609E-22"
+        ixz="4.2351647362715E-22"
+        iyy="3.88270144541784E-06"
+        iyz="1.1165181915409E-21"
+        izz="1.23363246373257E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/first_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-1.38777878078145E-17 0.0377774235989086 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/first_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rev1"
+    type="continuous">
+    <origin
+      xyz="0.023729 -0.1544 0.12603"
+      rpy="1.5708 0 0.6868" />
+    <parent
+      link="base_link" />
+    <child
+      link="first_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0.5"
+      upper="2"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="second_link">
+    <inertial>
+      <origin
+        xyz="0 0.034105335144052 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0273292036732051" />
+      <inertia
+        ixx="3.92376721402455E-05"
+        ixy="1.41878018665095E-20"
+        ixz="1.48758176130202E-21"
+        iyy="3.1735887237278E-06"
+        iyz="1.56765439248972E-20"
+        izz="4.05893139524263E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/second_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0.034105335144052 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/second_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="presm1"
+    type="prismatic">
+    <origin
+      xyz="0 0.055 0"
+      rpy="-1.5708 1.5708 0" />
+    <parent
+      link="first_link" />
+    <child
+      link="second_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.06"
+      upper="0.06"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="third_link">
+    <inertial>
+      <origin
+        xyz="0 0.0138331430446322 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0047289690501573" />
+      <inertia
+        ixx="2.01679937765819E-06"
+        ixy="2.42310026388755E-22"
+        ixz="1.05879118406788E-22"
+        iyy="1.83158443866074E-07"
+        iyz="8.75807343062413E-22"
+        izz="2.12344264192118E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/third_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0.0138331430446322 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basheer_robotic/meshes/third_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="presm2"
+    type="prismatic">
+    <origin
+      xyz="0 0.079983 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="second_link" />
+    <child
+      link="third_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.06"
+      upper="0.06"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+
+
+     <transmission name="tran0">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="back_j1">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor0">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+     </transmission>
+
+     <transmission name="tran1">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="back_j2">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor1">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+     </transmission>
+
+     <transmission name="tran2">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="front_j1">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor2">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+     </transmission>
+    
+     <transmission name="tran3">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="front_j2">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor3">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+     </transmission>
+
+     <transmission name="tran4">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="rev1">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor4">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+     </transmission>
+      
+     <transmission name="tran5">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="presm1">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor5">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+     </transmission>
+
+     <transmission name="tran5">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="prem2">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor5">
+	<hardwareInterface>PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+     </transmission>
+     
+
+      <gazebo>
+	<plugin name="control" filename="libgazebo_ros_control.so"/>
+	<plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+	<jointName>rev1,presm1,presm2</jointName>
+	</plugin>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+                  <leftJoint>back_j1,front_j1</leftJoint>
+                   <rightJoint>back_j2,front_j2</rightJoint>
+                   <robotBaseFrame>base_link</robotBaseFrame>
+                  <wheelSeparation>0.25</wheelSeparation>
+                  <wheelDiameter>0.07</wheelDiameter>
+                  <publishWheelJointState>true</publishWheelJointState>
+            </plugin>
+      </gazebo>
+
+
+
+
+
+
+
+
+</robot>
